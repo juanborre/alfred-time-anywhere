@@ -1,2 +1,9 @@
-# alfred-time-at-place
-Gives you the time at a place (country, city, address...)
+# Alfred Time at Place
+
+It will show you the time at the place you provided.
+
+You can search for any country/city/village/address.
+
+You need to register for an API_KEY here: https://ipgeolocation.io/
+
+You can input the API_KEY in the Workflow configuration
