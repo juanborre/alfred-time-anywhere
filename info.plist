@@ -4,16 +4,18 @@
 <dict>
 	<key>bundleid</key>
 	<string></string>
+	<key>category</key>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict/>
 	<key>createdby</key>
-	<string>Juan</string>
+	<string>juanborre</string>
 	<key>description</key>
-	<string></string>
+	<string>Displays time information for anywhere in the planet</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Get time at place</string>
+	<string>Time anywhere</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -67,15 +69,25 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string># Alfred Time at Place
+	<string># Alfred Time Anywhere
 
-It will show you the time at the place you provided.
+See the Github page [alfred-time-anywhere](https://github.com/juanborre/alfred-time-anywhere) for more information.
 
-You can search for any country/city/village/address.
+![Alfred Time Anywhere img](./media/alfred-time-anywhere.png)
 
-You need to register for an API_KEY here: https://ipgeolocation.io/
 
-You can input the API_KEY in the Workflow configuration</string>
+
+## Configuration
+
+The workflow works out of the box with a default `API_KEY` for the [ipgeolocation API](https://ipgeolocation.io/).
+
+The API has a request limit so, if you stick with using the workflow, I suggest that you make your own to let space for other people and not to be rate limited yourself.
+
+You can set your own `API_KEY` in the workflow configuration.
+
+Making a developer `API_KEY` is free of charge as of today.
+
+Enjoy! 👋</string>
 	<key>uidata</key>
 	<dict>
 		<key>57B6CE71-6DF7-4607-A6C9-4C74EC516F92</key>
@@ -92,7 +104,7 @@ You can input the API_KEY in the Workflow configuration</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string></string>
+				<string>c9e3c59947a145d58f370136e1d4f413</string>
 				<key>placeholder</key>
 				<string>API_KEY</string>
 				<key>required</key>
@@ -101,9 +113,9 @@ You can input the API_KEY in the Workflow configuration</string>
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>You need to register for an API_KEY at this website: https://ipgeolocation.io/</string>
+			<string>You can register for an API_KEY at this website: https://ipgeolocation.io/</string>
 			<key>label</key>
-			<string>API_KEY for the ipgeolocation</string>
+			<string>API_KEY for the ipgeolocation API</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
@@ -113,6 +125,6 @@ You can input the API_KEY in the Workflow configuration</string>
 	<key>version</key>
 	<string>1.0</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/juanborre/alfred-time-anywhere</string>
 </dict>
 </plist>
