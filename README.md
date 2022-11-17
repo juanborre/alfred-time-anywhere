@@ -16,6 +16,8 @@ Address
 
 Run it with `time <your place>`. You can change the keyword by opening Alfred and double clicking on the workflow script.
 
+You can install download the latest version in the [releases](https://github.com/juanborre/alfred-time-anywhere/releases) page.
+
 ## How it works
 
 The script uses the Python [Geopy](https://pypi.org/project/geopy/) package in order to find the GPS coordinates of the place you type.
