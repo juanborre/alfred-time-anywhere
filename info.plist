@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string></string>
-	<key>category</key>
-	<string>Tools</string>
 	<key>connections</key>
 	<dict/>
 	<key>createdby</key>
@@ -54,7 +52,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Time at city</string>
+				<string>Time anywhere</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -122,8 +120,10 @@ Enjoy! 👋</string>
 			<string>API_KEY</string>
 		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/juanborre/alfred-time-anywhere</string>
 </dict>
