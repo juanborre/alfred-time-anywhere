@@ -293,23 +293,38 @@ class Distance:
         return self + -other
 
     def __mul__(self, other):
-        return self.__class__(self.kilometers * other)
+        if isinstance(other, Distance):
+            raise TypeError(
+                "Distance instance must be multiplicated with numbers."
+            )
+        else:
+            return self.__class__(self.kilometers * other)
 
-    def __div__(self, other):
+    def __rmul__(self, other):
+        if isinstance(other, Distance):
+            raise TypeError(
+                "Distance instance must be multiplicated with numbers."
+            )
+        else:
+            return self.__class__(other * self.kilometers)
+
+    def __truediv__(self, other):
         if isinstance(other, Distance):
             return self.kilometers / other.kilometers
         else:
             return self.__class__(self.kilometers / other)
 
-    __truediv__ = __div__
+    def __floordiv__(self, other):
+        if isinstance(other, Distance):
+            return self.kilometers // other.kilometers
+        else:
+            return self.__class__(self.kilometers // other)
 
     def __abs__(self):
         return self.__class__(abs(self.kilometers))
 
-    def __nonzero__(self):
+    def __bool__(self):
         return bool(self.kilometers)
-
-    __bool__ = __nonzero__
 
     def measure(self, a, b):
         # Intentionally not documented, because this method is not supposed
@@ -359,6 +374,9 @@ distance=Distance(100))
             return cmp(self.kilometers, other.kilometers)
         else:
             return cmp(self.kilometers, other)
+
+    def __hash__(self):
+        return hash(self.kilometers)
 
     def __eq__(self, other):
         return self.__cmp__(other) == 0

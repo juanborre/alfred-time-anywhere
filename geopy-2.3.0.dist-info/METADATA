@@ -1,13 +1,13 @@
 Metadata-Version: 2.1
 Name: geopy
-Version: 2.2.0
+Version: 2.3.0
 Summary: Python Geocoding Toolbox
 Home-page: https://github.com/geopy/geopy
 Maintainer: Kostya Esmukov
 Maintainer-email: kostya@esmukov.ru
 License: MIT
-Download-URL: https://github.com/geopy/geopy/archive/2.2.0.tar.gz
-Keywords: geocode geocoding gis geographical maps earth distance
+Download-URL: https://github.com/geopy/geopy/archive/2.3.0.tar.gz
+Keywords: geocode,geocoding,gis,geographical,maps,earth,distance
 Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Intended Audience :: Developers
@@ -19,43 +19,40 @@ Classifier: Topic :: Scientific/Engineering :: GIS
 Classifier: Topic :: Software Development :: Libraries :: Python Modules
 Classifier: Programming Language :: Python :: 3 :: Only
 Classifier: Programming Language :: Python :: 3
-Classifier: Programming Language :: Python :: 3.5
-Classifier: Programming Language :: Python :: 3.6
 Classifier: Programming Language :: Python :: 3.7
 Classifier: Programming Language :: Python :: 3.8
 Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
 Classifier: Programming Language :: Python :: Implementation :: CPython
 Classifier: Programming Language :: Python :: Implementation :: PyPy
-Requires-Python: >=3.5
-Requires-Dist: geographiclib (<2,>=1.49)
+Requires-Python: >=3.7
+Requires-Dist: geographiclib (<3,>=1.52)
 Provides-Extra: aiohttp
 Requires-Dist: aiohttp ; extra == 'aiohttp'
 Provides-Extra: dev
-Requires-Dist: async-generator ; extra == 'dev'
 Requires-Dist: coverage ; extra == 'dev'
-Requires-Dist: flake8 (<3.9.0,>=3.8.0) ; extra == 'dev'
-Requires-Dist: isort (<5.7.0,>=5.6.0) ; extra == 'dev'
-Requires-Dist: pytest-aiohttp ; extra == 'dev'
+Requires-Dist: flake8 (<5.1,>=5.0) ; extra == 'dev'
+Requires-Dist: isort (<5.11.0,>=5.10.0) ; extra == 'dev'
+Requires-Dist: pytest-asyncio (>=0.17) ; extra == 'dev'
 Requires-Dist: pytest (>=3.10) ; extra == 'dev'
 Requires-Dist: readme-renderer ; extra == 'dev'
-Requires-Dist: sphinx ; extra == 'dev'
 Requires-Dist: sphinx-issues ; extra == 'dev'
+Requires-Dist: sphinx (<=4.3.2) ; extra == 'dev'
 Requires-Dist: sphinx-rtd-theme (>=0.5.0) ; extra == 'dev'
 Provides-Extra: dev-docs
 Requires-Dist: readme-renderer ; extra == 'dev-docs'
-Requires-Dist: sphinx ; extra == 'dev-docs'
+Requires-Dist: sphinx (<=4.3.2) ; extra == 'dev-docs'
 Requires-Dist: sphinx-issues ; extra == 'dev-docs'
 Requires-Dist: sphinx-rtd-theme (>=0.5.0) ; extra == 'dev-docs'
 Provides-Extra: dev-lint
-Requires-Dist: async-generator ; extra == 'dev-lint'
-Requires-Dist: flake8 (<3.9.0,>=3.8.0) ; extra == 'dev-lint'
-Requires-Dist: isort (<5.7.0,>=5.6.0) ; extra == 'dev-lint'
+Requires-Dist: flake8 (<5.1,>=5.0) ; extra == 'dev-lint'
+Requires-Dist: isort (<5.11.0,>=5.10.0) ; extra == 'dev-lint'
 Provides-Extra: dev-test
-Requires-Dist: async-generator ; extra == 'dev-test'
 Requires-Dist: coverage ; extra == 'dev-test'
-Requires-Dist: pytest-aiohttp ; extra == 'dev-test'
+Requires-Dist: pytest-asyncio (>=0.17) ; extra == 'dev-test'
 Requires-Dist: pytest (>=3.10) ; extra == 'dev-test'
-Requires-Dist: sphinx ; extra == 'dev-test'
+Requires-Dist: sphinx (<=4.3.2) ; extra == 'dev-test'
 Provides-Extra: requests
 Requires-Dist: urllib3 (>=1.24.2) ; extra == 'requests'
 Requires-Dist: requests (>=2.16.2) ; extra == 'requests'
@@ -95,7 +92,7 @@ Geocoder classes are located in `geopy.geocoders`_.
 .. _Geocoders doc section: https://geopy.readthedocs.io/en/latest/#geocoders
 .. _geopy.geocoders: https://github.com/geopy/geopy/tree/master/geopy/geocoders
 
-geopy is tested against CPython (versions 3.5, 3.6, 3.7, 3.8, 3.9)
+geopy is tested against CPython (versions 3.7, 3.8, 3.9, 3.10, 3.11)
 and PyPy3. geopy 1.x line also supported CPython 2.7, 3.4 and PyPy2.
 
 © geopy contributors 2006-2018 (see AUTHORS) under the `MIT

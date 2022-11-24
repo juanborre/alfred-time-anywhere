@@ -28,7 +28,8 @@ class MapBox(Geocoder):
             user_agent=None,
             ssl_context=DEFAULT_SENTINEL,
             adapter_factory=None,
-            domain='api.mapbox.com'
+            domain='api.mapbox.com',
+            referer=None
     ):
         """
         :param str api_key: The API key required by Mapbox to perform
@@ -57,6 +58,11 @@ class MapBox(Geocoder):
             .. versionadded:: 2.0
 
         :param str domain: base api domain for mapbox
+
+        :param str referer: The URL used to satisfy the URL restriction of
+            mapbox tokens.
+
+            .. versionadded:: 2.3
         """
         super().__init__(
             scheme=scheme,
@@ -69,6 +75,8 @@ class MapBox(Geocoder):
         self.api_key = api_key
         self.domain = domain.strip('/')
         self.api = "%s://%s%s" % (self.scheme, self.domain, self.api_path)
+        if referer:
+            self.headers['Referer'] = referer
 
     def _parse_json(self, json, exactly_one=True):
         '''Returns location, (latitude, longitude) from json feed.'''
@@ -94,6 +102,7 @@ class MapBox(Geocoder):
             timeout=DEFAULT_SENTINEL,
             proximity=None,
             country=None,
+            language=None,
             bbox=None
     ):
         """
@@ -119,6 +128,13 @@ class MapBox(Geocoder):
             Might be a Python list of strings.
 
         :type country: str or list
+
+        :param str language: This parameter controls the language of the text supplied in
+            responses, and also affects result scoring, with results matching the user’s
+            query in the requested language being preferred over results that match in
+            another language. You can pass two letters country codes (ISO 639-1).
+
+            .. versionadded:: 2.3
 
         :param bbox: The bounding box of the viewport within which
             to bias geocode results more prominently.
@@ -146,6 +162,9 @@ class MapBox(Geocoder):
         if proximity:
             p = Point(proximity)
             params['proximity'] = "%s,%s" % (p.longitude, p.latitude)
+
+        if language:
+            params['language'] = language
 
         quoted_query = quote(query.encode('utf-8'))
         url = "?".join((self.api % dict(query=quoted_query),
