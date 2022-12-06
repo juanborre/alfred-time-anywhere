@@ -3,8 +3,8 @@
 
 import sys
 from datetime import datetime
-from geopy.geocoders import Nominatim
 
+from geopy.geocoders import Nominatim
 from workflow import Workflow, web
 
 geolocator = Nominatim(user_agent="alfred workflow")
@@ -23,7 +23,8 @@ def main(wf):
         return
 
     api_key = args[0]
-    search_words = " ".join(args[1:])
+    format_12_24_h = args[1]
+    search_words = " ".join(args[2:])
     
     location = geolocator.geocode(search_words)
 
@@ -39,7 +40,8 @@ def main(wf):
     
     response_at_place = web.get(f"{base_url}&lat={location.latitude}&long={location.longitude}").json()
     timezone_at_place = response_at_place["timezone"]
-    time_at_place = response_at_place["time_24"]
+    time_at_place = response_at_place["time_24"] if format_12_24_h == "24" else response_at_place["time_12"]
+    
     date_at_place = response_at_place["date"]
     dst_at_place = response_at_place["dst_savings"]
     if dst_at_place:

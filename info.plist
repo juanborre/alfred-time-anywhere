@@ -44,7 +44,7 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>python3 get_time.py $API_KEY $1 </string>
+				<string>python3 get_time.py $API_KEY $FORMAT_12_24_H $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -85,6 +85,8 @@ You can set your own `API_KEY` in the workflow configuration.
 
 Making a developer `API_KEY` is free of charge as of today.
 
+You can choose between 12/24 hours format with the selector. (07:12 PM vs 19:12)
+
 Enjoy! 👋</string>
 	<key>uidata</key>
 	<dict>
@@ -119,11 +121,33 @@ Enjoy! 👋</string>
 			<key>variable</key>
 			<string>API_KEY</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>24_HOURS</string>
+						<string>24</string>
+					</array>
+					<array>
+						<string>12_HOURS</string>
+						<string>12</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Pick 12H for AM/PM mode</string>
+			<key>label</key>
+			<string>Chooses between 12h or 24h format for the time</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>FORMAT_12_24_H</string>
+		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>1.1</string>
+	<string>1.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/juanborre/alfred-time-anywhere</string>
 </dict>

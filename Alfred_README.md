@@ -16,4 +16,6 @@ You can set your own `API_KEY` in the workflow configuration.
 
 Making a developer `API_KEY` is free of charge as of today.
 
+You can choose between 12/24 hours format with the selector. (07:12 PM vs 19:12)
+
 Enjoy! 👋
