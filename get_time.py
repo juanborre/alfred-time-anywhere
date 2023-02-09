@@ -5,7 +5,7 @@ import sys
 from datetime import datetime
 
 from geopy.geocoders import Nominatim
-from workflow import Workflow, web
+from ualfred import Workflow, web
 
 geolocator = Nominatim(user_agent="alfred workflow")
 
